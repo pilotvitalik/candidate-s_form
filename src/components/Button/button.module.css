@@ -1,0 +1,29 @@
+.sendBtn{
+	display: inline-block;
+	position: relative;
+	width: 91%;
+	max-width: 343px;
+	height: 40px;
+	color: #BCBCBC;
+	font-size: 16px;
+	line-height: 24px;
+	background: #E8E8E8;
+	border: 1px solid #D9D9D9;
+	box-sizing: border-box;
+	border-radius: 2px 0px 0px 2px;
+}
+.sendBtn.active{
+	cursor: pointer;
+	color:  #fff;
+	background: #1890FF;
+	border: 5px;
+}
+.sendBtn.active:hover{
+	background: #40A9FF;
+	border-radius: 2px 0px 0px 2px;
+}
+.sendBtn.pressed{
+	cursor: pointer;
+	background: #096DD9;
+	color:  #fff;
+}
