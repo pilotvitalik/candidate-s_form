@@ -1,5 +1,5 @@
 import {useSelector, useDispatch} from 'react-redux';
-import Input from '@components/Input/Input';
+import RadioButton from '@components/RadioButton/RadioButton';
 
 function App() {
     const dispatch = useDispatch();
@@ -9,7 +9,7 @@ function App() {
     <div className="App">
         {defaultVal}
         <button type='button' onClick={() => {dispatch({type: 'default/increment', payload: ''})}}>+</button>
-        <Input/>
+        <RadioButton/>
     </div>
   );
 }
