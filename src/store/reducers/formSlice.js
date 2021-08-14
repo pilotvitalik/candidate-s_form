@@ -42,8 +42,8 @@ const initialState = {
       isChecked: false,
       isRequired:true
     } 
-  ]
-
+  ],
+  activeGender: '',
 };
 
 function getInitialData(form, type){
@@ -75,14 +75,7 @@ function updAgreement(form, data){
 }
 
 function updGender(form, data){
-  form.forEach((item, index) => {
-    if (data.id === index){
-      item.value = data.val;
-    } else {
-      item.value = '';
-    }
-  })
-  return form;
+  return form = data.val;
 }
 
 function upload(form, data){
@@ -118,7 +111,7 @@ export default function formReducer(state = initialState, action){
     case 'form/updGender':
       return{
         ...state,
-        gender: updGender(state.gender, action.payload),
+        activeGender: updGender(state.activeGender, action.payload),
       }
     case 'form/upload':
       return{

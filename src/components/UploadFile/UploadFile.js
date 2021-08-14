@@ -6,7 +6,6 @@ function UploadFile(props){
 	const dispatch = useDispatch();
 
 	function upload(e){
-		console.log(e)
 		dispatch({type: 'form/upload',
 			payload: {
 				val: e.target.files,
