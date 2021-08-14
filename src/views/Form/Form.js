@@ -10,30 +10,29 @@ import style from './form.module.css';
 
 function Form(){
   const dispatch = useDispatch();
-  const initForm = useSelector(state => state.form.form);
+  const initForm = useSelector(state => state.form);
 
   useEffect(() => {
     dispatch({type: 'form/getInitialData', payload: ''})
   }, [dispatch])
 
-  console.log(initForm.personalData);
 
-  let personalData = initForm.personalData.map((item) =>
+  let personal = initForm.personalData.map((item) =>
     (item.type === 'file')
-      ? <UploadFile key={item.id.toString()} data={item}/>
-      : <Input key={item.id.toString()} data={item}/>
+      ? <UploadFile key={item.id.toString()} data={item} block='PersonalData'/>
+      : <Input key={item.id.toString()} data={item} block='PersonalData'/>
   )
 
   let gender = initForm.gender.map((item) =>
-    <RadioButton key={item.id.toString()} data={item}/>
+    <RadioButton key={item.id.toString()} data={item} block='Gender'/>
   )
 
   let other = initForm.other.map((item) =>
-    <Input key={item.id.toString()} data={item}/>
+    <Input key={item.id.toString()} data={item} block='Other'/>
   )
 
   let agreement = initForm.agreement.map((item) =>
-    <Checkbox key={item.id.toString()} data={item}/>
+    <Checkbox key={item.id.toString()} data={item} block='Agreement'/>
   )
 
   return(
@@ -42,7 +41,7 @@ function Form(){
       <div className={style.personalData}>
         <h4>Личные данные</h4>
         <div className={style.personalDataBlock}>
-          {personalData}
+          {personal}
         </div>
       </div>
       <div className={style.gender}>

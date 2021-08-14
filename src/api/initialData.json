@@ -6,6 +6,7 @@
       "name": "name",
       "placeholder": "Имя",
       "type":"text",
+      "value": "",
       "isRequired":true
     }, 
     {
@@ -14,6 +15,7 @@
       "name": "surname",
       "placeholder": "Фамилия",
       "type":"text",
+      "value": "",
       "isRequired":true
     },
     {
@@ -22,6 +24,7 @@
       "name": "email",
       "placeholder": "Электронная почта",
       "type":"email",
+      "value": "",
       "isRequired":true
     },
     {
@@ -30,6 +33,7 @@
       "name": "uploadFile",
       "placeholder": "",
       "type":"file",
+      "value": "",
       "isRequired":false
     }
   ],
@@ -39,14 +43,14 @@
       "title": "Мужской",
       "name": "gender",
       "type":"radio",
-      "value": 1
+      "value": ""
     }, 
     {
       "id": 2,
       "title": "Женский",
       "name": "gender",
       "type":"radio",
-      "value": 2
+      "value": ""
     }
   ],
   "other": [
@@ -56,6 +60,7 @@
       "name": "github",
       "placeholder": "Вставьте ссылку на Github",
       "type":"url",
+      "value": "",
       "isRequired":false
     }
   ],
@@ -66,6 +71,7 @@
       "name": "privacy_policy",
       "type":"checkbox",
       "value": 1,
+      "isChecked": false,
       "isRequired":true
     } 
   ]
