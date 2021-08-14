@@ -19,9 +19,9 @@ function Form(){
   console.log(initForm.personalData);
 
   let personalData = initForm.personalData.map((item) =>
-    (item.type === 'text')
-      ? <Input key={item.id.toString()} data={item}/>
-      : <UploadFile key={item.id.toString()} data={item}/>
+    (item.type === 'file')
+      ? <UploadFile key={item.id.toString()} data={item}/>
+      : <Input key={item.id.toString()} data={item}/>
   )
 
   let gender = initForm.gender.map((item) =>

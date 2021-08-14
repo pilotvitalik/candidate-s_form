@@ -21,7 +21,7 @@
       "title": "Электронная почта",
       "name": "email",
       "placeholder": "Электронная почта",
-      "type":"text",
+      "type":"email",
       "isRequired":true
     },
     {
@@ -55,7 +55,7 @@
       "title": "Вставьте ссылку на Github",
       "name": "github",
       "placeholder": "Вставьте ссылку на Github",
-      "type":"text",
+      "type":"url",
       "isRequired":false
     }
   ],
