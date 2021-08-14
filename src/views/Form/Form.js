@@ -5,6 +5,7 @@ import UploadFile from '@components/UploadFile/UploadFile';
 import RadioButton from '@components/RadioButton/RadioButton';
 import Checkbox from '@components/Checkbox/Checkbox';
 import SendBtn from '@components/Button/Button';
+import Modal from '@components/Modal/Modal';
 import style from './form.module.css';
 
 function Form(){
@@ -40,7 +41,9 @@ function Form(){
       <h2>Анкета соискателя</h2>
       <div className={style.personalData}>
         <h4>Личные данные</h4>
-        {personalData}
+        <div className={style.personalDataBlock}>
+          {personalData}
+        </div>
       </div>
       <div className={style.gender}>
         <h4>Пол<sup>*</sup></h4>
@@ -56,6 +59,7 @@ function Form(){
         {agreement}
       </div>
       <SendBtn name='Отправить'/>
+      <Modal/>
     </div>
     )
 }

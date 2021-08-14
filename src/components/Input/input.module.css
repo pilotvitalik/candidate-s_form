@@ -4,6 +4,7 @@
 	position: relative;
 	width: auto;
 	height: auto;
+	margin-top: 17px;
 }
 .inputBlock label{
 	display: inline-block;
@@ -21,7 +22,7 @@
 .inputBlock input{
 	display: inline-block;
 	position: relative;
-	width: 256px;
+	width: 288px;
 	height: 40px;
 	color: #BFBFBF;
 	font-size: 16px;
@@ -49,4 +50,17 @@
 	cursor: default;
 	border-color: #D9D9D9;
 	background: #F5F5F5;
+}
+@media (min-width: 375px){
+	.inputBlock input{
+		width: 343px;
+	}
+}
+@media (min-width: 576px){
+	.inputBlock{
+		width: 256px;
+	}
+	.inputBlock input{
+		width: 256px;
+	}
 }

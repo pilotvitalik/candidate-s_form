@@ -2,6 +2,8 @@
   position: relative;
   width: auto;
   height: auto;
+  margin-top: 24px;
+  margin-bottom: 40px;
 }
  
 .uploadFileBlock input {
@@ -15,9 +17,8 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 100%;
-  max-width: 256px;
-  height: 42px;
+  width: 288px;
+  height: 40px;
   margin: 0;
   background: #F5F5F5;
   color: #595959;
@@ -52,4 +53,20 @@
 .plusBlock span:last-child{
   left: -2px;
   transform: rotate(90deg);
+}
+@media (min-width:  375px){
+  .btn{
+    width: 343px;
+  }
+}
+@media (min-width: 576px){
+  .uploadFileBlock{
+    margin-top: 42px;
+  }
+  .uploadFileBlock label{
+    width: 256px;
+  }
+  .btn{
+    width: 256px;
+  }
 }

@@ -81,7 +81,7 @@
     line-height: 38px;
 }
 .close{
-    display: flex;
+    display: none;
     position: absolute;
     width: 14.84px;
     height: 15.28px;
@@ -96,7 +96,7 @@
     cursor: pointer;
     filter: brightness(0.8);
 }
-@media (min-width: 992px){
+@media (min-width: 576px){
     .dialog {
         max-width: 547px;
         min-height: 244px;
@@ -106,5 +106,8 @@
     }
     .footer{
         margin-bottom: 40px;
+    }
+    .close{
+        display: flex;
     }
 }

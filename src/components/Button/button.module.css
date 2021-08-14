@@ -3,7 +3,7 @@
 .modalBtn{
 	display: inline-block;
 	position: relative;
-	width: 91%;
+	width: 100%;
 	max-width: 343px;
 	height: 40px;
 	color: #BCBCBC;
@@ -13,6 +13,10 @@
 	border: 1px solid #D9D9D9;
 	box-sizing: border-box;
 	border-radius: 2px 0px 0px 2px;
+}
+.modalBtn{
+	width: 91%;
+	margin: 0 auto;
 }
 .sendBtn.active{
 	cursor: pointer;

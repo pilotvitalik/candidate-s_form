@@ -1,14 +1,22 @@
 .form,
-.personalData{
+.personalData,
+.personalDataBlock,
+.gender,
+.gender>div,
+.other,
+.agreement{
 	display: flex;
 	flex-direction: column;
 	position: relative;
 	width: 100%;
 	height: auto;
 	padding: 16px;
+	box-sizing: border-box;
 }
 .form h2,
-.personalData h4{
+.personalData h4,
+.gender h4,
+.other h4{
 	color: #262626;
 	font-weight: 500;
 	font-size: 40px;
@@ -16,11 +24,57 @@
 	margin-top: 0;
 	margin-bottom: 32px;
 }
-.personalData{
+.personalData,
+.personalDataBlock,
+.gender,
+.other,
+.agreement{
+	width: 91%;
+	max-width: 343px;
 	padding: 0;
 }
-.personalData h4{
+.personalDataBlock{
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.personalData h4,
+.gender h4,
+.other h4{
 	font-weight: 600;
 	font-size: 22px;
-	margin-bottom: 16px;
+	margin-bottom: 0;
+}
+.gender>div{
+	flex-direction: row;
+	flex-wrap: nowrap;
+	margin-top: 12px;
+	padding: 0;
+}
+.gender>div>div:last-child{
+	margin-left: 40px;
+}
+.other{
+	margin-top: 40px;
+}
+.other h4{
+	margin-bottom: 7px;
+}
+.agreement{
+	margin-top: 48px;
+	margin-bottom: 40px;
+}
+@media (min-width: 576px){
+	.form{
+		margin: 0 auto;
+	}
+	.form,
+	.personalData,
+	.personalDataBlock{
+		width: 100%;
+		max-width: 592px;
+	}
+	.gender>div>div:last-child{
+		margin-left: 108px;
+	}
 }
