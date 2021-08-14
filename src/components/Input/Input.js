@@ -5,7 +5,7 @@ function Input(){
 	return(
 		<div className={style.inputBlock}>
 			<label htmlFor='inp1'>Имя<sup>*</sup></label>
-			<input id='inp1' type='text' className={style.modalBtn} disabled placeholder='Имя'/>
+			<input id='inp1' type='text' className={style.modalBtn} placeholder='Имя'/>
 		</div>
 	)
 }

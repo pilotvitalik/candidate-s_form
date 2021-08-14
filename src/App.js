@@ -1,5 +1,5 @@
 import {useSelector, useDispatch} from 'react-redux';
-import Modal from '@components/Modal/Modal';
+import Form from '@views/Form/Form';
 
 function App() {
     const dispatch = useDispatch();
@@ -7,9 +7,9 @@ function App() {
 
   return (
     <div className="App">
-        {defaultVal}
-        <button type='button' onClick={() => {dispatch({type: 'default/increment', payload: ''})}}>+</button>
-        <Modal/>
+        {/*{defaultVal}
+        <button type='button' onClick={() => {dispatch({type: 'default/increment', payload: ''})}}>+</button>*/}
+        <Form/>
     </div>
   );
 }
