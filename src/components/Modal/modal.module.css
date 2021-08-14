@@ -1,0 +1,110 @@
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1050;
+    /*opacity: 0;*/
+    opacity: 1;
+    transition: opacity 200ms ease-in;
+    /*pointer-events: none;*/
+    pointer-events: auto;
+}
+.modal:target {
+    opacity: 1;
+    pointer-events: auto;
+    overflow-y: auto;
+}
+.dialog {
+    position: relative;
+    display: block;
+    width: 95%;
+    max-width: 340px;
+    height: auto;
+    min-height: 202px;
+    padding: 15px;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: inherit;
+    height: inherit;
+    min-height: inherit;
+    position: relative;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .3rem;
+    background-clip: padding-box;
+    background-color: #fff;
+    outline: 0;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.body,
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 95%;
+  margin: 0 auto;
+}
+.footer{
+    margin: auto auto 16px;
+}
+.title,
+.invite{
+    display: inline-block;
+    position: relative;
+    width: auto;
+    height: auto;
+    margin: 32px auto 0;
+    color: #262626;
+    font-size: 24px;
+    line-height: 38px;
+}
+.invite{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 38px;
+}
+.close{
+    display: flex;
+    position: absolute;
+    width: 14.84px;
+    height: 15.28px;
+    top: 44.36px;
+    right: 44.59px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    outline: none;
+}
+.close:hover{
+    cursor: pointer;
+    filter: brightness(0.8);
+}
+@media (min-width: 992px){
+    .dialog {
+        max-width: 547px;
+        min-height: 244px;
+    }
+    .title{
+        margin-top: 47px;
+    }
+    .footer{
+        margin-bottom: 40px;
+    }
+}
