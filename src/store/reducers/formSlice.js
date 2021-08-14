@@ -45,6 +45,7 @@ const initialState = {
   ],
   activeGender: '',
   requiredFields: [],
+  isDisableSendBtn: true
 };
 
 function getInitialData(form, type){
@@ -100,9 +101,14 @@ function upload(form, data){
   return form;
 }
 
-function removeRequireField(fields, data){
-  if (fields.indexOf(data.name) > -1) fields.splice(fields.indexOf(data.name), 1);
-  return fields;
+function removeRequireField(state, data){
+  if (state.requiredFields.indexOf(data.name) > -1) state.requiredFields.splice(state.requiredFields.indexOf(data.name), 1);
+  return state.requiredFields;
+}
+
+function checkAllFill(state){
+  if (state.requiredFields.length === 0) return false;
+  return true;
 }
 
 export default function formReducer(state = initialState, action){
@@ -120,31 +126,36 @@ export default function formReducer(state = initialState, action){
       return{
         ...state,
         personalData: updPersonalData(state.personalData, action.payload),
-        requiredFields: removeRequireField(state.requiredFields, action.payload),
+        requiredFields: removeRequireField(state, action.payload),
+        isDisableSendBtn: checkAllFill(state)
       };
     case 'form/updOther':
       return{
         ...state,
         other: updOther(state.other, action.payload),
-        requiredFields: removeRequireField(state.requiredFields, action.payload),
+        requiredFields: removeRequireField(state, action.payload),
+        isDisableSendBtn: checkAllFill(state)
       }
     case 'form/updAgreement':
       return{
         ...state,
         agreement: updAgreement(state.agreement, action.payload),
-        requiredFields: removeRequireField(state.requiredFields, action.payload),
+        requiredFields: removeRequireField(state, action.payload),
+        isDisableSendBtn: checkAllFill(state)
       }
     case 'form/updGender':
       return{
         ...state,
         activeGender: updGender(state.activeGender, action.payload),
-        requiredFields: removeRequireField(state.requiredFields, action.payload),
+        requiredFields: removeRequireField(state, action.payload),
+        isDisableSendBtn: checkAllFill(state)
       }
     case 'form/upload':
       return{
         ...state,
         personalData: upload(state.personalData, action.payload),
-        requiredFields: removeRequireField(state.requiredFields, action.payload),
+        requiredFields: removeRequireField(state, action.payload),
+        isDisableSendBtn: checkAllFill(state)
       }
     default:
       return state;
