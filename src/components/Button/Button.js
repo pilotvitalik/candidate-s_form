@@ -3,7 +3,7 @@ import style from './button.module.css';
 
 function Button(){
 	return(
-		<button type='button' className={style.sendBtn + ' ' + style.pressed}>Отправить</button>
+		<button type='button' className={style.modalBtn}>Понятно</button>
 	)
 }
 

@@ -1,4 +1,6 @@
-.sendBtn{
+/*стили для кнопки Отправить*/
+.sendBtn,
+.modalBtn{
 	display: inline-block;
 	position: relative;
 	width: 91%;
@@ -26,4 +28,21 @@
 	cursor: pointer;
 	background: #096DD9;
 	color:  #fff;
+}
+/*стили для кнопки модального окна*/
+.modalBtn{
+	width: 308px;
+	color: #fff;
+	background: #1890FF;
+	border-radius: 2px;
+}
+.modalBtn:hover{
+	cursor: pointer;
+	background: #096DD9;
+}
+@media (min-width:  992px){
+	.sendBtn,
+	.modalBtn{
+		width: 360px;
+	}
 }
