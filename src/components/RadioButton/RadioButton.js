@@ -4,7 +4,7 @@ import style from './radioButton.module.css';
 function RadioButton(){
 	return(
 		<div className={style.radioButtonBlock}>
-			<input id='inp1' type='radio' className={style.modalBtn} placeholder='Имя'/>
+			<input id='inp1' type='radio' placeholder='Имя'/>
 			<label htmlFor='inp1'>Мужской</label>
 		</div>
 	)

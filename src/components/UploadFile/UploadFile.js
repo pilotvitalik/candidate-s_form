@@ -5,7 +5,7 @@ function UploadFile(){
 	return(
 		<div className={style.uploadFileBlock}>
 		   <input name="file" type="file" id="input__file" multiple/>
-		   <label for="input__file" className={style.btn}>
+		   <label htmlFor="input__file" className={style.btn}>
 		   	  <div className={style.plusBlock}>
 		   	  	<span></span>
 		   	  	<span></span>
