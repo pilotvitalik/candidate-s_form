@@ -9,6 +9,7 @@ function UploadFile(props){
 		dispatch({type: 'form/upload',
 			payload: {
 				val: e.target.files,
+				name: props.data.name,
 				id: props.data.id - 1
 			}
 		})

@@ -34,7 +34,7 @@
       "placeholder": "",
       "type":"file",
       "files": "",
-      "isRequired":false
+      "isRequired":true
     }
   ],
   "gender": [
@@ -43,14 +43,16 @@
       "title": "Мужской",
       "name": "gender",
       "type":"radio",
-      "value": ""
+      "value": "",
+      "isRequired":true
     }, 
     {
       "id": 2,
       "title": "Женский",
       "name": "gender",
       "type":"radio",
-      "value": ""
+      "value": "",
+      "isRequired":true
     }
   ],
   "other": [

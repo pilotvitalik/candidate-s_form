@@ -9,6 +9,7 @@ function Checkbox(props){
 		dispatch({type: `form/upd${props.block}`,
 			payload: {
 				status: e.target.checked,
+				name: props.data.name,
 				id: props.data.id - 1
 			}
 		})

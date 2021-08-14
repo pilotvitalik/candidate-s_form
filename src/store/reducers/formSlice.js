@@ -44,6 +44,7 @@ const initialState = {
     } 
   ],
   activeGender: '',
+  requiredFields: [],
 };
 
 function getInitialData(form, type){
@@ -57,6 +58,22 @@ function getInitialData(form, type){
     default:
       return form = initData.agreement;
   }
+}
+
+function setRequiredFields(requiredFields){
+  let arr = [];
+  for (let key in initData){
+    arr = arr.concat(defineRequireField(initData[key]));
+  }
+  return Array.from(new Set(arr));
+}
+
+function defineRequireField(data){
+  let arr = data.reduce((prev, item) => {
+    if (item.isRequired) prev.push(item.name);
+    return prev;
+  }, [])
+  return arr;
 }
 
 function updPersonalData(form, data){
@@ -83,6 +100,11 @@ function upload(form, data){
   return form;
 }
 
+function removeRequireField(fields, data){
+  if (fields.indexOf(data.name) > -1) fields.splice(fields.indexOf(data.name), 1);
+  return fields;
+}
+
 export default function formReducer(state = initialState, action){
   switch(action.type){
     case 'form/getInitialData':
@@ -92,31 +114,37 @@ export default function formReducer(state = initialState, action){
         gender: getInitialData(state.gender, 'gender'),
         other: getInitialData(state.other, 'other'),
         agreement: getInitialData(state.agreement, 'agreement'),
+        requiredFields: setRequiredFields(state.requiredFields),
       };
     case 'form/updPersonalData':
       return{
         ...state,
         personalData: updPersonalData(state.personalData, action.payload),
+        requiredFields: removeRequireField(state.requiredFields, action.payload),
       };
     case 'form/updOther':
       return{
         ...state,
         other: updOther(state.other, action.payload),
+        requiredFields: removeRequireField(state.requiredFields, action.payload),
       }
     case 'form/updAgreement':
       return{
         ...state,
         agreement: updAgreement(state.agreement, action.payload),
+        requiredFields: removeRequireField(state.requiredFields, action.payload),
       }
     case 'form/updGender':
       return{
         ...state,
         activeGender: updGender(state.activeGender, action.payload),
+        requiredFields: removeRequireField(state.requiredFields, action.payload),
       }
     case 'form/upload':
       return{
         ...state,
         personalData: upload(state.personalData, action.payload),
+        requiredFields: removeRequireField(state.requiredFields, action.payload),
       }
     default:
       return state;

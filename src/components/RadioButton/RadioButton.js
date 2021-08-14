@@ -10,6 +10,7 @@ function RadioButton(props){
 		dispatch({type: `form/upd${props.block}`, 
 			payload: {
 				val: props.data.id,
+				name: props.data.name,
 				id: props.data.id - 1
 			}
 		})

@@ -9,6 +9,7 @@ function Input(props){
 		dispatch({type: `form/upd${props.block}`, 
 			payload: {
 				val: e.target.value,
+				name: props.data.name,
 				id: props.data.id - 1
 			}
 		});
