@@ -6,7 +6,7 @@
       "name": "name",
       "placeholder": "Имя",
       "type":"text",
-      "isReqired":true
+      "isRequired":true
     }, 
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "name": "surname",
       "placeholder": "Фамилия",
       "type":"text",
-      "isReqired":true
+      "isRequired":true
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "name": "email",
       "placeholder": "Электронная почта",
       "type":"text",
-      "isReqired":true
+      "isRequired":true
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "name": "uploadFile",
       "placeholder": "",
       "type":"file",
-      "isReqired":false
+      "isRequired":false
     }
   ],
   "gender": [
@@ -56,17 +56,17 @@
       "name": "github",
       "placeholder": "Вставьте ссылку на Github",
       "type":"text",
-      "isReqired":false
+      "isRequired":false
     }
   ],
   "agreement": [
     {
       "id": 1,
-      "title": "* Я согласен с политикой конфиденциальности",
+      "title": "Я согласен с политикой конфиденциальности",
       "name": "privacy_policy",
       "type":"checkbox",
       "value": 1,
-      "isReqired":true
+      "isRequired":true
     } 
   ]
 }
