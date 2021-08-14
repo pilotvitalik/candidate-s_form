@@ -8,6 +8,7 @@ module.exports = {
             '@assets': resolvePath('./src/assets'),
             '@components': resolvePath('./src/components'),
             '@views': resolvePath('./src/views'),
+            '@api': resolvePath('./src/api'),
         }
     },
 }

@@ -1,0 +1,72 @@
+{ 
+  "personalData": [ 
+    {
+      "id": 1,
+      "title": "Имя",
+      "name": "name",
+      "placeholder": "Имя",
+      "type":"text",
+      "isReqired":true
+    }, 
+    {
+      "id": 2,
+      "title": "Фамилия",
+      "name": "surname",
+      "placeholder": "Фамилия",
+      "type":"text",
+      "isReqired":true
+    },
+    {
+      "id": 3,
+      "title": "Электронная почта",
+      "name": "email",
+      "placeholder": "Электронная почта",
+      "type":"text",
+      "isReqired":true
+    },
+    {
+      "id": 4,
+      "title": "Загрузите резюме",
+      "name": "uploadFile",
+      "placeholder": "",
+      "type":"file",
+      "isReqired":false
+    }
+  ],
+  "gender": [
+    {
+      "id": 1,
+      "title": "Мужской",
+      "name": "gender",
+      "type":"radio",
+      "value": 1
+    }, 
+    {
+      "id": 2,
+      "title": "Женский",
+      "name": "gender",
+      "type":"radio",
+      "value": 2
+    }
+  ],
+  "other": [
+    {
+      "id": 1,
+      "title": "Вставьте ссылку на Github",
+      "name": "github",
+      "placeholder": "Вставьте ссылку на Github",
+      "type":"text",
+      "isReqired":false
+    }
+  ],
+  "agreement": [
+    {
+      "id": 1,
+      "title": "* Я согласен с политикой конфиденциальности",
+      "name": "privacy_policy",
+      "type":"checkbox",
+      "value": 1,
+      "isReqired":true
+    } 
+  ]
+}

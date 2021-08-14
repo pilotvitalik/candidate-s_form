@@ -12,14 +12,10 @@ function Form(){
 			<h2>Анкета соискателя</h2>
 			<div className={style.personalData}>
 				<h4>Личные данные</h4>
-				<div className={style.fullname}>
-					<Input/>
-					<Input/>
-				</div>
-				<div className={style.contact}>
-					<Input/>
-					<UploadFile/>
-				</div>
+				<Input/>
+				<Input/>
+				<Input/>
+				<UploadFile/>
 			</div>
 			<div className={style.gender}>
 				<h4>Пол<sup>*</sup></h4>
@@ -28,7 +24,7 @@ function Form(){
 					<RadioButton/>
 				</div>
 			</div>
-			<div className={style.github}>
+			<div className={style.other}>
 				<h4>GitHub</h4>
 				<Input/>
 			</div>
