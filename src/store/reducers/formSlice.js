@@ -85,6 +85,11 @@ function updGender(form, data){
   return form;
 }
 
+function upload(form, data){
+  form[data.id].files = data.val;
+  return form;
+}
+
 export default function formReducer(state = initialState, action){
   switch(action.type){
     case 'form/getInitialData':
@@ -114,6 +119,11 @@ export default function formReducer(state = initialState, action){
       return{
         ...state,
         gender: updGender(state.gender, action.payload),
+      }
+    case 'form/upload':
+      return{
+        ...state,
+        personalData: upload(state.personalData, action.payload),
       }
     default:
       return state;

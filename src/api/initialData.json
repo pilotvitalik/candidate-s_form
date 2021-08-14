@@ -33,7 +33,7 @@
       "name": "uploadFile",
       "placeholder": "",
       "type":"file",
-      "value": "",
+      "files": "",
       "isRequired":false
     }
   ],
