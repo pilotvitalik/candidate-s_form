@@ -55,7 +55,9 @@ const initialState = {
   requiredFields: [],
   validateFields: [],
   isDisableSendBtn: true,
-  isValidate: false
+  isValidate: false,
+  isShowModal: false,
+  typeModal: 'send'
 };
 
 function getInitialData(form, type){
@@ -114,6 +116,7 @@ function updPersonalData(form, data){
 
 function updOther(form, data){
   form[data.id].value = data.val;
+
   form[data.id].isValidate = checkValidate(form[data.id], data.val);
   return form
 }
@@ -207,6 +210,30 @@ function addRequireField(form, data){
   return form;
 }
 
+function triggerModal(data){
+  return !data
+}
+
+function changeType(typeModal, type){
+  return type;
+}
+
+function clearData(form, data){
+  if (data){
+    return '';
+  }
+  form.forEach(item => {
+    if (item.hasOwnProperty('value') && !item.hasOwnProperty('isChecked')){
+      item.value = '';
+    } else if (item.hasOwnProperty('files')){
+      item.files = '';
+    } else {
+      item.isChecked = false;
+    }
+  })
+  return form;
+}
+
 export default function formReducer(state = initialState, action){
   switch(action.type){
     case 'form/getInitialData':
@@ -266,12 +293,29 @@ export default function formReducer(state = initialState, action){
       return{
         ...state,
         isValidate: sendForm(state),
+        isShowModal: triggerModal(state.isShowModal),
+        typeModal: changeType(state.typeModal, 'send'),
       }
     case 'form/errPersonalData':
       return{
         ...state,
         personalData: errPersonalData(state.personalData, action.payload),
       };
+    case 'form/confPolicy':
+      return{
+        ...state,
+        isShowModal: triggerModal(state.isShowModal),
+        typeModal: changeType(state.typeModal, 'confPolicy')
+      }
+    case 'form/closeModal':
+      return{
+        ...state,
+        isShowModal: triggerModal(state.isShowModal),
+        personalData: clearData(state.personalData, ''),
+        activeGender: clearData(state.activeGender, 'single'),
+        other: clearData(state.other, ''),
+        agreement: clearData(state.agreement, ''),
+      }
     default:
       return state;
   }

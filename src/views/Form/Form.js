@@ -16,6 +16,10 @@ function Form(){
     dispatch({type: 'form/getInitialData', payload: ''})
   }, [dispatch])
 
+  function sendForm(){
+    dispatch({type: 'form/sendForm', payload: ''});
+  }
+
 
   let personal = initForm.personalData.map((item) =>
     (item.type === 'file')
@@ -60,7 +64,7 @@ function Form(){
       <div className={style.agreement}>
         {agreement}
       </div>
-      <SendBtn name='Отправить'/>
+      <SendBtn name='Отправить' func={sendForm}/>
       <Modal/>
     </div>
     )

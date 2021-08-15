@@ -62,7 +62,7 @@
       "id": 2,
       "title": "Женский",
       "name": "gender",
-      "type":"radio",
+      "type": "radio",
       "value": "",
       "isRequired":true
     }
@@ -76,6 +76,7 @@
       "type":"url",
       "value": "",
       "isRequired":false,
+      "typeValidate": ["url"],
       "isError": false,
       "error": ""
     }
@@ -83,7 +84,10 @@
   "agreement": [
     {
       "id": 1,
-      "title": "Я согласен с политикой конфиденциальности",
+      "title": "Я согласен с ",
+      "link": "политикой конфиденциальности",
+      "url": "",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed libero lorem, rutrum non tellus sed, dapibus maximus enim. Sed rhoncus finibus diam in venenatis. Nullam eu ultricies orci, at molestie dolor. Integer molestie sollicitudin purus, et laoreet ipsum pellentesque a. Ut pellentesque facilisis neque tincidunt sodales. Quisque lobortis non risus non rhoncus. Nulla eros sapien, tempus non dui scelerisque, tempor molestie enim. Duis ex elit, sagittis eget massa blandit, dignissim fringilla nibh. Nulla suscipit sodales nulla, a posuere augue. In vulputate sagittis suscipit. Quisque accumsan faucibus tellus, vel blandit augue eleifend a. Nam malesuada est eu augue placerat porttitor. Proin faucibus sodales mauris, ac accumsan enim convallis eget. Aliquam erat volutpat. Integer consectetur malesuada mauris eu luctus. Nulla ultrices tellus velit, at pharetra ligula efficitur in. Praesent at nisi lorem. Proin mi nibh, suscipit vitae consectetur ut, hendrerit id leo. Integer placerat urna in ligula cursus euismod. Etiam et massa nisl. Pellentesque ac arcu ut mi tincidunt molestie nec et ante. Praesent euismod nisi urna, nec eleifend mi posuere sed. Sed fringilla gravida odio eget aliquam. Donec egestas arcu orci, sit amet ornare neque tempus vitae. Ut ultricies euismod suscipit. Vivamus laoreet leo eget accumsan scelerisque. Fusce pulvinar, urna at aliquam fringilla, felis erat commodo metus, sed tincidunt ipsum leo quis turpis. Nam non scelerisque leo.",
       "name": "privacy_policy",
       "type":"checkbox",
       "value": 1,

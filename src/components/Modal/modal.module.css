@@ -17,7 +17,7 @@
     pointer-events: none;
     /*pointer-events: auto;*/
 }
-.modal:target {
+.showModal{
     opacity: 1;
     pointer-events: auto;
     overflow-y: auto;

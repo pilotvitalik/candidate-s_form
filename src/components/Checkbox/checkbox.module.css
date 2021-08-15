@@ -1,7 +1,7 @@
 .checkBoxBlock{
 	display: flex;
 	flex-direction: row;
-	flex-wrap: nowrap;
+	flex-wrap: wrap;
 	position: relative;
 	width: auto;
 	height: auto;
@@ -59,6 +59,18 @@
 .checkBoxBlock input:checked + label:after{
 	display: block;
 }
+.checkBoxBlock label + span{
+	display: inline-block;
+	position: relative;
+	margin-left: 5px;
+	color: #1890FF;
+	font-size: 13px;
+	margin-left: 23px;
+}
+.checkBoxBlock label + span:hover{
+	cursor: pointer;
+	text-decoration: underline;
+}
 @media (min-width: 375px){
 	.checkBoxBlock label{
 		padding-left: 0;
@@ -66,5 +78,18 @@
 	.checkBoxBlock input + label:before{
 		margin-right: 8px;
 		left: unset;
+	}
+	.checkBoxBlock label,
+	.checkBoxBlock label + span{
+		font-size: 14px;
+	}
+	.checkBoxBlock label + span{
+		top: 6.5px;
+		margin-left: 5px;
+	}
+}
+@media (min-width: 576px){
+	.checkBoxBlock label + span{
+		top: 7.5px;
 	}
 }

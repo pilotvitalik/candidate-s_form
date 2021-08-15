@@ -15,6 +15,12 @@ function Checkbox(props){
 		})
 	}
 
+	function showConfPolicy(){
+		dispatch({type: 'form/confPolicy', payload: ''});
+	}
+
+	let link = props.data.link ? props.data.link : '';
+
 	return(
 		<div className={style.checkBoxBlock}>
 			<input id={`agreement_${props.data.id}`}
@@ -27,6 +33,7 @@ function Checkbox(props){
 				}
 				{props.data.title}
 			</label>
+			<span onClick={showConfPolicy}>{link}</span>
 		</div>
 	)
 }
