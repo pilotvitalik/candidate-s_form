@@ -1,7 +1,13 @@
 .modal {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: fixed;
     margin: 0;
     padding: 0;
@@ -12,6 +18,8 @@
     background: rgba(0,0,0,0.5);
     z-index: 1050;
     opacity: 0;
+    -webkit-transition: opacity 500ms ease-in;
+    -o-transition: opacity 500ms ease-in;
     transition: opacity 500ms ease-in;
     pointer-events: none;
 }
@@ -31,8 +39,13 @@
     overflow: hidden;
 }
 .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 100%;
     max-height: inherit;
     height: inherit;
@@ -45,9 +58,15 @@
     outline: 0;
 }
 .header {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: relative;
 }
 .body{
@@ -103,9 +122,15 @@
 }
 .body,
 .footer{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
   width: 95%;
   margin: 0 auto;
@@ -147,7 +172,8 @@
 }
 .close:hover{
     cursor: pointer;
-    filter: brightness(0.8);
+    -webkit-filter: brightness(0.8);
+            filter: brightness(0.8);
 }
 @media (min-width: 576px){
     .dialog {
@@ -161,6 +187,8 @@
         margin-bottom: 40px;
     }
     .close{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
     }
     .dialog.agreement{

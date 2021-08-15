@@ -1,6 +1,11 @@
 .inputBlock{
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 	position: relative;
 	width: auto;
 	height: auto;
@@ -37,9 +42,22 @@
 	line-height: 24px;
 	padding: 8px 12px 4px 11px;
 	border: 1px solid #D9D9D9;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 	border-radius: 2px;
 	cursor: pointer;
+}
+.inputBlock input::-webkit-input-placeholder{
+	color: #BFBFBF;
+}
+.inputBlock input::-moz-placeholder{
+	color: #BFBFBF;
+}
+.inputBlock input:-ms-input-placeholder{
+	color: #BFBFBF;
+}
+.inputBlock input::-ms-input-placeholder{
+	color: #BFBFBF;
 }
 .inputBlock input::placeholder{
 	color: #BFBFBF;
@@ -49,12 +67,14 @@
 }
 .inputBlock input:focus{
 	border-color: #40A9FF;
-	box-shadow: 0px 0px 4px rgba(24, 144, 255, 0.5);
+	-webkit-box-shadow: 0px 0px 4px rgba(24, 144, 255, 0.5);
+	        box-shadow: 0px 0px 4px rgba(24, 144, 255, 0.5);
 	outline: none;
 }
 .inputBlock input.typing{
 	color: #595959;
-	box-shadow: 0px 0px 4px rgba(24, 144, 255, 0.5);
+	-webkit-box-shadow: 0px 0px 4px rgba(24, 144, 255, 0.5);
+	        box-shadow: 0px 0px 4px rgba(24, 144, 255, 0.5);
 	outline: none;
 }
 .inputBlock input.filled{
@@ -85,7 +105,8 @@
 }
 .inputBlock input.inputError.typing{
 	color: #595959;
-	box-shadow:  none;
+	-webkit-box-shadow:  none;
+	        box-shadow:  none;
 }
 .inputBlock:nth-of-type(2){
 		margin-top: 18px;
