@@ -45,8 +45,11 @@ function Form(){
         </div>
       </div>
       <div className={style.gender}>
-        <h4>Пол<sup>*</sup></h4>
-        <div>
+        <div className={style.genderTitle}>
+          <h4>Пол<sup>*</sup></h4>
+          <span className={initForm.activeGender ? style.hideGenderError : ''}>укажите пол</span>
+        </div>
+        <div className={style.genderList}>
           {gender}
         </div>
       </div>

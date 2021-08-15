@@ -7,7 +7,11 @@
       "placeholder": "Имя",
       "type":"text",
       "value": "",
-      "isRequired":true
+      "isRequired":true,
+      "typeValidate": ["letters"],
+      "isValidate": true,
+      "isError": false,
+      "error": "В имени могут быть только буквы"
     }, 
     {
       "id": 2,
@@ -16,7 +20,11 @@
       "placeholder": "Фамилия",
       "type":"text",
       "value": "",
-      "isRequired":true
+      "isRequired":true,
+      "typeValidate": ["letters"],
+      "isValidate": true,
+      "isError": false,
+      "error": "В фамилии могут быть только буквы"
     },
     {
       "id": 3,
@@ -25,7 +33,11 @@
       "placeholder": "Электронная почта",
       "type":"email",
       "value": "",
-      "isRequired":true
+      "isRequired":true,
+      "typeValidate": ["email"],
+      "isValidate": true,
+      "isError": false,
+      "error": "Пожауйста, укажите электронную почту"
     },
     {
       "id": 4,
@@ -63,7 +75,9 @@
       "placeholder": "Вставьте ссылку на Github",
       "type":"url",
       "value": "",
-      "isRequired":false
+      "isRequired":false,
+      "isError": false,
+      "error": ""
     }
   ],
   "agreement": [

@@ -2,7 +2,7 @@
 .personalData,
 .personalDataBlock,
 .gender,
-.gender>div,
+.genderList,
 .other,
 .agreement{
 	display: flex;
@@ -17,12 +17,12 @@
 .personalData h4,
 .gender h4,
 .other h4{
+	margin-top: 0;
+	margin-bottom: 32px;
 	color: #262626;
 	font-weight: 500;
 	font-size: 40px;
 	line-height: 38px;
-	margin-top: 0;
-	margin-bottom: 32px;
 }
 .personalData,
 .personalDataBlock,
@@ -37,6 +37,7 @@
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	margin-bottom: 40px;
 }
 .personalData h4,
 .gender h4,
@@ -45,13 +46,36 @@
 	font-size: 22px;
 	margin-bottom: 0;
 }
-.gender>div{
+.genderTitle{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	position: relative;
+	width: auto;
+	height: auto;
+}
+.genderTitle h4,
+.genderTitle span{
+	display: inline-block;
+	width: fit-content;
+}
+.genderTitle span{
+	align-self: flex-end;
+	position: relative;
+	height:  fit-content;
+	margin-left: 8px;
+	bottom: 6px;
+	color: #F5222D;
+	font-size: 14px;
+	line-height: 22px;
+}
+.genderList{
 	flex-direction: row;
 	flex-wrap: nowrap;
 	margin-top: 12px;
 	padding: 0;
 }
-.gender>div>div:last-child{
+.genderList>div:last-child{
 	margin-left: 40px;
 }
 .other{
@@ -64,6 +88,9 @@
 	margin-top: 48px;
 	margin-bottom: 40px;
 }
+.genderTitle span.hideGenderError{
+	display: none;
+}
 @media (min-width: 576px){
 	.form{
 		margin: 0 auto;
@@ -74,7 +101,10 @@
 		width: 100%;
 		max-width: 592px;
 	}
-	.gender>div>div:last-child{
+	.genderTitle span{
+		margin-left: 21px;
+	}
+	.genderList>div:last-child{
 		margin-left: 108px;
 	}
 }
