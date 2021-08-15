@@ -185,7 +185,6 @@ function triggerValidateField(state, data){
   } else {
     if (index !== -1) state.validateFields.splice(index, 1)
   }
-console.log(state)
   return state.validateFields;
 }
 
@@ -196,6 +195,16 @@ function errPersonalData(personalData, data){
     personalData[data.id].isError = false;
   }
   return personalData;
+}
+
+function deleteFile(form, data){
+  form[data.id].files = '';
+  return form;
+}
+
+function addRequireField(form, data){
+  form.push(data.name);
+  return form;
 }
 
 export default function formReducer(state = initialState, action){
@@ -246,6 +255,12 @@ export default function formReducer(state = initialState, action){
         personalData: upload(state.personalData, action.payload),
         requiredFields: removeRequireField(state, action.payload),
         isDisableSendBtn: checkAllFill(state)
+      }
+    case 'form/deleteFile':
+      return{
+        ...state,
+        personalData: deleteFile(state.personalData, action.payload),
+        requiredFields: addRequireField(state.requiredFields, action.payload),
       }
     case 'form/sendForm':
       return{
