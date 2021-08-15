@@ -57,7 +57,8 @@ const initialState = {
   isDisableSendBtn: true,
   isValidate: false,
   isShowModal: false,
-  typeModal: 'send'
+  typeModal: 'send',
+  activeAgreement: '',
 };
 
 function getInitialData(form, type){
@@ -211,6 +212,13 @@ function addRequireField(form, data){
 }
 
 function triggerModal(data){
+  console.log(data)
+  if (data){
+    document.body.style.overflow = 'auto';
+  } else {
+    document.body.style.overflow = 'hidden';
+  }
+  console.log(!data)
   return !data
 }
 
@@ -232,6 +240,14 @@ function clearData(form, data){
     }
   })
   return form;
+}
+
+function numberAgreement(num, data){
+  return data;
+}
+
+function showAgree(data){
+  return !data;
 }
 
 export default function formReducer(state = initialState, action){
@@ -267,7 +283,7 @@ export default function formReducer(state = initialState, action){
         ...state,
         agreement: updAgreement(state.agreement, action.payload),
         requiredFields: removeRequireField(state, action.payload),
-        isDisableSendBtn: checkAllFill(state)
+        isDisableSendBtn: checkAllFill(state),
       }
     case 'form/updGender':
       return{
@@ -301,11 +317,12 @@ export default function formReducer(state = initialState, action){
         ...state,
         personalData: errPersonalData(state.personalData, action.payload),
       };
-    case 'form/confPolicy':
+    case 'form/showAgreement':
       return{
         ...state,
         isShowModal: triggerModal(state.isShowModal),
-        typeModal: changeType(state.typeModal, 'confPolicy')
+        typeModal: changeType(state.typeModal, 'agreement'),
+        activeAgreement: numberAgreement(state.activeAgreement, action.payload),
       }
     case 'form/closeModal':
       return{
@@ -315,6 +332,12 @@ export default function formReducer(state = initialState, action){
         activeGender: clearData(state.activeGender, 'single'),
         other: clearData(state.other, ''),
         agreement: clearData(state.agreement, ''),
+        isDisableSendBtn: showAgree(state.isDisableSendBtn),
+      }
+    case 'form/closeAgreeModal':
+      return{
+        ...state,
+        isShowModal: triggerModal(state.isShowModal),
       }
     default:
       return state;

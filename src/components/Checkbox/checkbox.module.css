@@ -90,6 +90,6 @@
 }
 @media (min-width: 576px){
 	.checkBoxBlock label + span{
-		top: 7.5px;
+		top: 8.5px;
 	}
 }

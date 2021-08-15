@@ -15,8 +15,8 @@ function Checkbox(props){
 		})
 	}
 
-	function showConfPolicy(){
-		dispatch({type: 'form/confPolicy', payload: ''});
+	function showAgreement(){
+		dispatch({type: 'form/showAgreement', payload: props.data.id - 1});
 	}
 
 	let link = props.data.link ? props.data.link : '';
@@ -33,7 +33,7 @@ function Checkbox(props){
 				}
 				{props.data.title}
 			</label>
-			<span onClick={showConfPolicy}>{link}</span>
+			<span onClick={showAgreement}>{link}</span>
 		</div>
 	)
 }
