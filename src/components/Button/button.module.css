@@ -44,9 +44,12 @@
 	cursor: pointer;
 	background: #096DD9;
 }
-@media (min-width:  992px){
+@media (min-width:  576px){
 	.sendBtn,
 	.modalBtn{
-		width: 360px;
+		max-width: 360px;
+	}
+	.sendBtn{
+		line-height: 23px;
 	}
 }

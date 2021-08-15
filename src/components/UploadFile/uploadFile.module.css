@@ -17,7 +17,7 @@
   justify-content: center;
   position: relative;
   width: 288px;
-  height: 40px;
+  height: 42px;
   margin: 0;
   background: #F5F5F5;
   color: #595959;
@@ -122,7 +122,7 @@
 }
 @media (min-width: 576px){
   .uploadFileBlock{
-    margin-top: 42px;
+    margin-top: 69px;
   }
   .uploadFileBlock label,
   .btn,

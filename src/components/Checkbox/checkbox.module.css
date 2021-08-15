@@ -21,6 +21,7 @@
 	font-size: 13px;
 	line-height: 22px;
 	padding-left: 24px;
+	letter-spacing: -0.5px;
 }
 .checkBoxBlock label:hover{
 	cursor: pointer;
@@ -66,6 +67,7 @@
 	color: #1890FF;
 	font-size: 13px;
 	margin-left: 23px;
+	letter-spacing: -0.35px;
 }
 .checkBoxBlock label + span:hover{
 	cursor: pointer;
@@ -89,7 +91,17 @@
 	}
 }
 @media (min-width: 576px){
+	.checkBoxBlock label{
+		top: -1px;
+	}
 	.checkBoxBlock label + span{
 		top: 8.5px;
+	}
+	.checkBoxBlock label sup{
+		display: inline-block;
+		position: relative;
+		margin-right: 4px;
+		top: 4px;
+		font-size: 14px;
 	}
 }
