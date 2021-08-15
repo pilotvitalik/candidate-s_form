@@ -60,6 +60,16 @@
 .checkBoxBlock input:checked + label:after{
 	display: block;
 }
+.checkBoxBlock label{
+	letter-spacing: -0.5px;
+}
+.checkBoxBlock label sup{
+	display: inline-block;
+	position: relative;
+	margin-right: 4px;
+	top: 7px;
+	font-size: 16px;
+}
 .checkBoxBlock label + span{
 	display: inline-block;
 	position: relative;
@@ -86,8 +96,8 @@
 		font-size: 14px;
 	}
 	.checkBoxBlock label + span{
-		top: 6.5px;
-		margin-left: 5px;
+		top: 7.5px;
+		margin-left: 4px;
 	}
 }
 @media (min-width: 576px){

@@ -31,8 +31,11 @@
 }
 
 .btn span {
+  position: relative;
   margin-top: 1px;
+  left:  2px;
   line-height: 1;
+  letter-spacing: -0.2px;
 }
 .plusBlock{
   display: block;
@@ -40,13 +43,14 @@
   width: 15px;
   height: 15px;
   top: 12.5px;
-  left: 12.5px;
+  left: 57px;
 }
 .plusBlock span{
   display: inline-block;
   position: relative;
   width: 2px;
   height: 15px;
+  left: 0;
   background: #8C8C8C;
 }
 .plusBlock span:last-child{
@@ -128,5 +132,8 @@
   .btn,
   .fileBlock{
     width: 256px;
+  }
+  .plusBlock{
+    left: 12.5px;
   }
 }
