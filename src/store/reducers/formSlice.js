@@ -74,7 +74,7 @@ function getInitialData(form, type){
   }
 }
 
-function setRequiredFields(requiredFields){
+function setRequiredFields(){
   let arr = [];
   for (let key in initData){
     arr = arr.concat(defineRequireField(initData[key]));
@@ -82,7 +82,7 @@ function setRequiredFields(requiredFields){
   return Array.from(new Set(arr));
 }
 
-function setValidateFields(validateFields){
+function setValidateFields(){
   let arr = [];
   let preArr = '';
   for (let key in initData){
@@ -93,19 +93,19 @@ function setValidateFields(validateFields){
 }
 
 function defineRequireField(data){
-  let arr = data.reduce((prev, item) => {
+  data = data.reduce((prev, item) => {
     if (item.isRequired) prev.push(item.name);
     return prev;
   }, [])
-  return arr;
+  return data;
 }
 
 function defineValidateField(data){
-  let arr = data.reduce((prev, item) => {
+  data = data.reduce((prev, item) => {
     if (item.hasOwnProperty('typeValidate')) prev.push(item.name);
     return prev;
   }, [])
-  return arr;
+  return data;
 }
 
 function updPersonalData(form, data){
@@ -127,7 +127,7 @@ function updAgreement(form, data){
 }
 
 function updGender(form, data){
-  return form = data.val;
+  return data.val;
 }
 
 function upload(form, data){
@@ -244,8 +244,8 @@ export default function formReducer(state = initialState, action){
         gender: getInitialData(state.gender, 'gender'),
         other: getInitialData(state.other, 'other'),
         agreement: getInitialData(state.agreement, 'agreement'),
-        requiredFields: setRequiredFields(state.requiredFields),
-        validateFields: setValidateFields(state.validateFields),
+        requiredFields: setRequiredFields(),
+        validateFields: setValidateFields(),
       };
     case 'form/updPersonalData':
       return{
