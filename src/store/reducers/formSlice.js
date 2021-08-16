@@ -117,7 +117,6 @@ function updPersonalData(form, data){
 
 function updOther(form, data){
   form[data.id].value = data.val;
-
   form[data.id].isValidate = checkValidate(form[data.id], data.val);
   return form
 }
@@ -212,18 +211,12 @@ function addRequireField(form, data){
 }
 
 function triggerModal(data){
-  console.log(data)
   if (data){
     document.body.style.overflow = 'auto';
   } else {
     document.body.style.overflow = 'hidden';
   }
-  console.log(!data)
   return !data
-}
-
-function changeType(typeModal, type){
-  return type;
 }
 
 function clearData(form, data){
@@ -240,14 +233,6 @@ function clearData(form, data){
     }
   })
   return form;
-}
-
-function numberAgreement(num, data){
-  return data;
-}
-
-function showAgree(data){
-  return !data;
 }
 
 export default function formReducer(state = initialState, action){
@@ -310,7 +295,7 @@ export default function formReducer(state = initialState, action){
         ...state,
         isValidate: sendForm(state),
         isShowModal: triggerModal(state.isShowModal),
-        typeModal: changeType(state.typeModal, 'send'),
+        typeModal: 'send',
       }
     case 'form/errPersonalData':
       return{
@@ -321,8 +306,8 @@ export default function formReducer(state = initialState, action){
       return{
         ...state,
         isShowModal: triggerModal(state.isShowModal),
-        typeModal: changeType(state.typeModal, 'agreement'),
-        activeAgreement: numberAgreement(state.activeAgreement, action.payload),
+        typeModal: 'agreement',
+        activeAgreement: action.payload,
       }
     case 'form/closeModal':
       return{
@@ -332,7 +317,7 @@ export default function formReducer(state = initialState, action){
         activeGender: clearData(state.activeGender, 'single'),
         other: clearData(state.other, ''),
         agreement: clearData(state.agreement, ''),
-        isDisableSendBtn: showAgree(state.isDisableSendBtn),
+        isDisableSendBtn: !state.isDisableSendBtn,
       }
     case 'form/closeAgreeModal':
       return{
