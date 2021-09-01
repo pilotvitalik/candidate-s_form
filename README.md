@@ -25,7 +25,6 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 # Список выполненных работ:
-URL: http://80.78.244.252/testing_task/candidate_form/
 + React + Redux;
 + валидация формы на клиенте;
 + типы input указаны в зависимости от контекста;
